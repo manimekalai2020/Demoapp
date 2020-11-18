@@ -8,39 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     // MARK: - Properties
-
-    @IBOutlet var firstNameTextField: UITextField!
-    @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
-
     @IBOutlet var saveButton: UIButton!
-
     @IBOutlet var textFieldss: [UITextField]!
-
     @IBOutlet var passwordValidationLabel: UILabel!
 
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Setup View
         setupView()
-
+        saveButton.cornerRadius = 15
         // Register View Controller as Observer
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
-
+    @IBAction func Login_Action(_ sender: UIButton) {
+//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Homeviewcontroller") as? Homeviewcontroller
+//        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     // MARK: - View Methods
 
     fileprivate func setupView() {
         // Configure Save Button
         saveButton.isEnabled = false
-
+        saveButton.backgroundColor  = UIColor.gray
         // Configure Password Validation Label
         passwordValidationLabel.isHidden = true
     }
@@ -59,9 +56,18 @@ class ViewController: UIViewController {
                 break
             }
         }
-        
+        if formIsValid == true {
+            self.passwordValidationLabel.isHidden = true
+
+            saveButton.backgroundColor = UIColor.blue
+            
+        }else{
+            saveButton.backgroundColor = UIColor.gray
+
+        }
         // Update Save Button
         saveButton.isEnabled = formIsValid
+        
     }
 
     // MARK: - Helper Methods
@@ -70,32 +76,38 @@ class ViewController: UIViewController {
         guard let text = textField.text else {
             return (false, nil)
         }
-
+        
         if textField == passwordTextField {
-            return (text.count >= 6, "Your password is too short.")
+            return (text.count >= 8 && text.count <= 15,  "Your password length need be above 7 and below 15.")
         }
 
         return (text.count > 0, "This field cannot be empty.")
     }
+    
 
 }
 
-extension ViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
        
         case emailTextField:
-            passwordTextField.becomeFirstResponder()
+            let textset = textField.text ?? ""
+            if textset.isValidEmail() {
+                self.passwordValidationLabel.isHidden = true
+                 passwordTextField.becomeFirstResponder()
+            }else{
+                self.passwordValidationLabel.isHidden = false
+                self.passwordValidationLabel.text = "Enter valid email address"
+                
+            }
+
+            
         case passwordTextField:
             // Validate Text Field
             let (valid, message) = validate(textField)
 
-//            if valid {
-//                emailTextField.becomeFirstResponder()
-//            }
-
-            // Update Password Validation Label
             self.passwordValidationLabel.text = message
 
             // Show/Hide Password Validation Label
@@ -109,5 +121,13 @@ extension ViewController: UITextFieldDelegate {
         return true
     }
     
+    
 }
 
+extension String {
+    func isValidEmail() -> Bool {
+        // here, `try!` will always succeed because the pattern is valid
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    }
+}

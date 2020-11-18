@@ -74,11 +74,7 @@ class SearchNetworkingClass{
         executeRequest(request, { (json) in
             let code = json[ApiKey.code].intValue
             if code == 499{
-                AppUserDefaults.removeAllValues()
-                let vc = PreLoginVC.instantiate(fromAppStoryboard: .Main)
-                if let navigation = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController{
-                    navigation.pushViewController(vc, animated: true)
-                }
+             
                 
             }else{
                 success(json)
@@ -86,9 +82,7 @@ class SearchNetworkingClass{
             
         }) { (err) in
             if let url = request.url{
-                if NetworkReachabilityManager(host: "\(url)")?.isReachable == false{
-                    CommonFunctions.showToastWithMessage("You are not connected with internet", controller: UIApplication.shared.keyWindow?.rootViewController ?? UIViewController())
-                }
+               
             }
             
             failure(err)
@@ -156,18 +150,6 @@ class SearchNetworkingClass{
         let password = "DAF87DSFDSFDSA98FSADKJE324KJL32HFD7FDSFB24343J49DSF"
         let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
-        let headers = ["Authorization": "Basic \(base64Credentials)", "access_token": "Bearer \(AppUserDefaults.value(forKey: .accesstoken).stringValue)"]
-        
-        
-        GET(endPoint: endPoint.path, parameters: parameters, headers: headers, loader: loader, success: { (json) in
-            let code = json[ApiKey.code].intValue
-            let msg = json[ApiKey.message].stringValue
-            switch code {
-            case ApiCode.success: success(json)
-            default: failure(NSError(code: code, localizedDescription: msg))
-            }
-        }) { (error) in
-            failure(error)
-        }
+     
     }
 }

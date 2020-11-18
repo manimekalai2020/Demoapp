@@ -82,11 +82,7 @@ enum AppNetworking {
         executeRequest(request, { (json) in
             let code = json[ApiKey.code].intValue
             if code == 499{
-                AppUserDefaults.removeAllValues()
-                let vc = PreLoginVC.instantiate(fromAppStoryboard: .Main)
-                if let navigation = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController{
-                    navigation.pushViewController(vc, animated: true)
-                }
+              
             
             }else{
                 success(json)
@@ -94,9 +90,7 @@ enum AppNetworking {
 
         }) { (err) in
             if let url = request.url{
-                if NetworkReachabilityManager(host: "\(url)")?.isReachable == false{
-                    CommonFunctions.showToastWithMessage("You are not connected with internet", controller: UIApplication.shared.keyWindow?.rootViewController ?? UIViewController())
-                }
+         
             }
             
             failure(err)
