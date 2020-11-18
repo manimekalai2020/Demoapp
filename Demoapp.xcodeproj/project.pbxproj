@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		181DB0A225641A42009BB1B7 /* Homeviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DB0A125641A42009BB1B7 /* Homeviewcontroller.swift */; };
+		18958B01256557D30098D398 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18958B00256557D30098D398 /* Wireframe.swift */; };
+		18958B06256557E90098D398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18958B05256557E90098D398 /* ViewController.swift */; };
+		18958B0B256558040098D398 /* Postlistcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18958B0A256558040098D398 /* Postlistcell.xib */; };
 		18CF299B25643A900063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF299425643A8F0063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
 		18CF299C25643A900063FBA6 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF299525643A900063FBA6 /* MenuItemView.swift */; };
 		18CF299D25643A900063FBA6 /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF299625643A900063FBA6 /* CAPSPageMenu+Options.swift */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		049EC5F6EDCB6A97EB3546F0 /* Pods-Demoapp-DemoappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demoapp-DemoappUITests.debug.xcconfig"; path = "Target Support Files/Pods-Demoapp-DemoappUITests/Pods-Demoapp-DemoappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		181DB0A125641A42009BB1B7 /* Homeviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homeviewcontroller.swift; sourceTree = "<group>"; };
+		18958B00256557D30098D398 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		18958B05256557E90098D398 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18958B0A256558040098D398 /* Postlistcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Postlistcell.xib; sourceTree = "<group>"; };
 		18CF299425643A8F0063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
 		18CF299525643A900063FBA6 /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		18CF299625643A900063FBA6 /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				18CF29A625643B3D0063FBA6 /* PostListvc.swift */,
+				18958B0A256558040098D398 /* Postlistcell.xib */,
 				18CF29AE25643B4D0063FBA6 /* FavListvc.swift */,
 				18CF29B3256446420063FBA6 /* Postlistcell.swift */,
 			);
@@ -173,6 +180,7 @@
 				18CF29F8256451F60063FBA6 /* AppNetworking.swift */,
 				18CF29F4256451F50063FBA6 /* JsonHandler.swift */,
 				18CF29F7256451F60063FBA6 /* SearchNetworkingClass.swift */,
+				18958B00256557D30098D398 /* Wireframe.swift */,
 				18CF29F5256451F50063FBA6 /* Webservice+EndPoints.swift */,
 				18CF29F6256451F60063FBA6 /* Webservices.swift */,
 			);
@@ -218,6 +226,7 @@
 				18CF29A525643B230063FBA6 /* TabBar */,
 				18CF298B25643A490063FBA6 /* Helper */,
 				18F8D8D62564085400594D4C /* AppDelegate.swift */,
+				18958B05256557E90098D398 /* ViewController.swift */,
 				18F8D8D82564085400594D4C /* SceneDelegate.swift */,
 				18F8D8DA2564085400594D4C /* LoginViewController.swift */,
 				181DB0A125641A42009BB1B7 /* Homeviewcontroller.swift */,
@@ -382,6 +391,7 @@
 				18F8D8E62564085600594D4C /* LaunchScreen.storyboard in Resources */,
 				18F8D8E32564085600594D4C /* Assets.xcassets in Resources */,
 				18F8D8DE2564085400594D4C /* Main.storyboard in Resources */,
+				18958B0B256558040098D398 /* Postlistcell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +527,7 @@
 				181DB0A225641A42009BB1B7 /* Homeviewcontroller.swift in Sources */,
 				18F8D8E12564085400594D4C /* Demoapp.xcdatamodeld in Sources */,
 				18CF29AF25643B4D0063FBA6 /* FavListvc.swift in Sources */,
+				18958B06256557E90098D398 /* ViewController.swift in Sources */,
 				18CF29FD256451F60063FBA6 /* AppNetworking.swift in Sources */,
 				18CF2A2825647DAF0063FBA6 /* TodoModel.swift in Sources */,
 				18CF29B4256446420063FBA6 /* Postlistcell.swift in Sources */,
@@ -529,6 +540,7 @@
 				18CF299D25643A900063FBA6 /* CAPSPageMenu+Options.swift in Sources */,
 				18F8D8D92564085400594D4C /* SceneDelegate.swift in Sources */,
 				18CF299B25643A900063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
+				18958B01256557D30098D398 /* Wireframe.swift in Sources */,
 				18CF299E25643A900063FBA6 /* CAPSPageMenu.swift in Sources */,
 				18CF299F25643A900063FBA6 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				18CF29FA256451F60063FBA6 /* Webservice+EndPoints.swift in Sources */,

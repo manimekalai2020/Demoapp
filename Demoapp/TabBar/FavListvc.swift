@@ -53,14 +53,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.Title_label.text = self.Postlist[tagvalue].title
     cell.Description_label.text = self.Postlist[tagvalue].body
     cell.Favbutton.isHidden = true
-    cell.Favbutton.tag = indexPath.row
-    if SaveArray.contains(indexPath.row) {
-        cell.Favbutton.setImage(#imageLiteral(resourceName: "star_color"), for: .normal)
-      //do something
-    }else{
-        cell.Favbutton.setImage(#imageLiteral(resourceName: "star_icon"), for: .normal)
-
-    }
+    
     return cell
 }
     
@@ -72,4 +65,5 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 }
 }
+
 

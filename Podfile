@@ -8,7 +8,8 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'SVProgressHUD'
 pod 'ObjectMapper'
-
+pod 'RxSwift', '6.0.0-rc.1'
+pod 'RxCocoa', '6.0.0-rc.1'
   # Pods for Demoapp
 
   target 'DemoappTests' do

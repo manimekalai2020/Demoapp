@@ -8,13 +8,16 @@
 import UIKit
 import Alamofire
 import ObjectMapper
+import RxSwift
+import RxCocoa
+
 struct Manager {
 
 static var results = [Int]()
 
 
 }
-class PostListvc: UIViewController {
+class PostListvc: ViewController, UITableViewDelegate {
     var Postlist:[Todo] = []
     var isLikeBtnSelected = false
     var SaveArray : [Int] = []
@@ -31,41 +34,69 @@ class PostListvc: UIViewController {
         }
 
         super.viewDidLoad()
+        self.tableview.register(UINib(nibName: "Postlistcell", bundle: nil), forCellReuseIdentifier: "Postlistcell")
+     //   tableview.register(UINib(nibName: "Postlistcell", bundle: nil), forCellReuseIdentifier: "Postlistcell")
+
+        
     Apicall()
+        
+        
+        
+       
+
         // Do any additional setup after loading the view.
     }
-  
-    @IBAction func Fvbutton_Tab(_ sender: UIButton) {
-        let tagvalue = sender.tag
-        if isLikeBtnSelected{
-            isLikeBtnSelected = false
-            sender.setImage(#imageLiteral(resourceName: "star_icon"), for: .normal)
-            Manager.results = Manager.results.filter(){$0 != tagvalue}
-            UserDefaults.standard.set(Manager.results, forKey: "saveData")
+    func obdservertable(){
+        let items = Observable.just(Postlist)
 
-       }else{
-        sender.setImage(#imageLiteral(resourceName: "star_color"), for: .normal)
-        Manager.results.append(tagvalue)
-        UserDefaults.standard.set(Manager.results, forKey: "saveData")
-        isLikeBtnSelected = true
-        }
 
+        items
+            .bind(to: tableview.rx.items(cellIdentifier: "Postlistcell", cellType: Postlistcell.self)) { (row, element, cell) in
+                cell.Title_label.text = element.title
+                cell.Description_label.text = element.body
+                cell.Favbutton.tag = row
+                if Manager.results.contains(row) {
+                    cell.Favbutton.setImage(#imageLiteral(resourceName: "star_color"), for: .normal)
+
+                  //do something
+                }else{
+                    cell.Favbutton.setImage(#imageLiteral(resourceName: "star_icon"), for: .normal)
+
+                }
+
+            }
+            .disposed(by: disposeBag)
+        tableview.rx
+            .modelSelected(String.self)
+            .subscribe(onNext:  { value in
+                DefaultWireframe.presentAlert("Tapped `\(value)`")
+            })
+            .disposed(by: disposeBag)
+
+        tableview.rx
+            .itemAccessoryButtonTapped
+            .subscribe(onNext: { indexPath in
+                DefaultWireframe.presentAlert("Tapped Detail @ \(indexPath.section),\(indexPath.row)")
+            })
+            .disposed(by: disposeBag)
+ 
     }
-    
+  
+ 
     func Apicall(){
         
         var todos = [Todo]()
         if Reachability.isConnectedToNetwork(){
 
-        JsonHandler.StartRequest(HostURL, method: .get, params: nil , ShowIt: false, setview: self.view, success: { (Responce) in
+            JsonHandler.StartRequest(HostURL, method: .get, params: nil , ShowIt: false, setview: self.view, success: { [self] (Responce) in
               print(Responce)
 
             let jsonarray = Responce.arrayObject as NSArray?
             UserDefaults.standard.set(jsonarray, forKey: "jsonData")
             print(UserDefaults.standard.array(forKey: "jsonData")!)
             self.Postlist = Mapper<Todo>().mapArray(JSONArray: jsonarray as! [[String : Any]])
-            
-            self.tableview.reloadData()
+                self.obdservertable()
+          //  self.tableview.reloadData()
             
           },EmptyData: { (Responce) in
            
@@ -76,41 +107,11 @@ class PostListvc: UIViewController {
         }else{
             let jsonarray = UserDefaults.standard.array(forKey: "jsonData")!
             self.Postlist = Mapper<Todo>().mapArray(JSONArray: jsonarray as! [[String : Any]])
-            self.tableview.reloadData()
+            
+            self.obdservertable()
+            //self.tableview.reloadData()
         }
     }
     
 
-}
-extension PostListvc: UITableViewDataSource,UITableViewDelegate{
-    
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return Postlist.count
-}
-    
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Postlistcell", for: indexPath)  as! Postlistcell
-    cell.Title_label.text = self.Postlist[indexPath.row].title
-    cell.Description_label.text = self.Postlist[indexPath.row].body
-    cell.Favbutton.tag = indexPath.row
-    let ara = UserDefaults.standard.array(forKey: "saveData")
-
-    if Manager.results.contains(indexPath.row) {
-        cell.Favbutton.setImage(#imageLiteral(resourceName: "star_color"), for: .normal)
-
-      //do something
-    }else{
-        cell.Favbutton.setImage(#imageLiteral(resourceName: "star_icon"), for: .normal)
-
-    }
-    return cell
-}
-    
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//          if let url = URL(string: self.Weburl_STRING[indexPath.row]) {
-//          UIApplication.shared.open(url)
-//}
-    
-
-}
 }
