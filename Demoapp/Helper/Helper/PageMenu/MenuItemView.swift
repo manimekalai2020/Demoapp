@@ -1,10 +1,3 @@
-//
-//  MenuItemView.swift
-//  PageMenuConfigurationDemo
-//
-//  Created by Matthew York on 3/5/17.
-//  Copyright © 2017 Aeron. All rights reserved.
-//
 
 import UIKit
 

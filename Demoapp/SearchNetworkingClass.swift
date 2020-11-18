@@ -1,10 +1,4 @@
-//
-//  SearchNetworkingClass.swift
-//  Pixalive
-//
-//  Created by Mohd Sultan on 03/04/20.
-//  Copyright © 2020 Manish . All rights reserved.
-//
+
 
 import UIKit
 import SwiftyJSON

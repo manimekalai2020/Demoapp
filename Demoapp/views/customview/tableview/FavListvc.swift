@@ -10,14 +10,12 @@ import Alamofire
 import ObjectMapper
 
 class FavListvc: UIViewController {
-    var Postlist:[Todo] = []
-    var savelist:[Todo] = []
+    var Postlist:[PostlistModel] = []
 
     var isLikeBtnSelected = false
     var SaveArray : [Int] = []
 
     @IBOutlet weak var tableview: UITableView!
-var HostURL = "https://jsonplaceholder.typicode.com/posts"
     override func viewDidLoad() {
         super.viewDidLoad()
         ///let array  = stringsarray?.compactMap({ Int($0 as! String) })
@@ -33,7 +31,7 @@ var HostURL = "https://jsonplaceholder.typicode.com/posts"
     func Apicall(){
         print(SaveArray)
             let jsonarray = UserDefaults.standard.array(forKey: "jsonData")!
-            self.Postlist = Mapper<Todo>().mapArray(JSONArray: jsonarray as! [[String : Any]])
+            self.Postlist = Mapper<PostlistModel>().mapArray(JSONArray: jsonarray as! [[String : Any]])
         
             self.tableview.reloadData()
     }

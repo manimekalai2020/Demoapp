@@ -1,10 +1,3 @@
-//
-//  JsonHandler.swift
-//  SmartSuperMarket
-//
-//  Created by Bala Mac on 09/08/18.
-//  Copyright © 2018 Smarther. All rights reserved.
-//
 
 import UIKit
 import Alamofire

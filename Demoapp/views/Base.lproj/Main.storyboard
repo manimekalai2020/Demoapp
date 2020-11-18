@@ -456,7 +456,6 @@
                                             <color key="titleColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="Login_Action:" destination="PRG-Cp-IVc" eventType="touchUpInside" id="Oe4-YG-Pcq"/>
                                             <segue destination="NVa-Du-Ijg" kind="show" id="Ie0-jJ-43m"/>
                                         </connections>
                                     </button>

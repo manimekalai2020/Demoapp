@@ -1,10 +1,4 @@
-//
-//  UserInputKeys.swift
-//  Pixalive
-//
-//  Created by Manish  on 22/07/19.
-//  Copyright © 2019 Manish . All rights reserved.
-//
+
 
 import Foundation
 

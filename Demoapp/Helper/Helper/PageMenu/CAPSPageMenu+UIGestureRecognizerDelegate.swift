@@ -1,10 +1,4 @@
 //
-//  CAPSPageMenu+UIGestureRecognizerDelegate.swift
-//  PageMenuNoStoryboardConfigurationDemo
-//
-//  Created by Matthew York on 3/6/17.
-//  Copyright © 2017 UACAPS. All rights reserved.
-//
 
 import UIKit
 

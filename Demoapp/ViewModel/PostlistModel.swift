@@ -1,16 +1,9 @@
-//
-//  Todo.swift
-//  CodeSample
-//
-//  Created by Gina De La Rosa on 6/3/18.
-//  Copyright © 2018 Gina De La Rosa. All rights reserved.
-//  Struct model for to do list from JSONPlaceholder API endpoint: /users/1/todos
 
 
 import UIKit
 import ObjectMapper
 
-class Todo: NSObject  , Mappable{
+class PostlistModel: NSObject  , Mappable{
        var id : Int?
        var userId : Int?
         var title : String?

@@ -1,10 +1,3 @@
-//
-//  Theme.swift
-//  Business_Module
-//
-//  Created by apple on 06/02/20.
-//  Copyright © 2020 Apple. All rights reserved.
-//
 
 import Foundation
 import UIKit

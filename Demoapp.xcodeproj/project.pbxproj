@@ -28,8 +28,7 @@
 		18CF29FC256451F60063FBA6 /* SearchNetworkingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F7256451F60063FBA6 /* SearchNetworkingClass.swift */; };
 		18CF29FD256451F60063FBA6 /* AppNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F8256451F60063FBA6 /* AppNetworking.swift */; };
 		18CF2A13256456B60063FBA6 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF2A12256456B60063FBA6 /* ApiKeys.swift */; };
-		18CF2A192564593C0063FBA6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF2A182564593C0063FBA6 /* Todo.swift */; };
-		18CF2A2825647DAF0063FBA6 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF2A2725647DAF0063FBA6 /* TodoModel.swift */; };
+		18CF2A192564593C0063FBA6 /* PostlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF2A182564593C0063FBA6 /* PostlistModel.swift */; };
 		18F8D8D72564085400594D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D8D62564085400594D4C /* AppDelegate.swift */; };
 		18F8D8D92564085400594D4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D8D82564085400594D4C /* SceneDelegate.swift */; };
 		18F8D8DB2564085400594D4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D8DA2564085400594D4C /* LoginViewController.swift */; };
@@ -84,8 +83,7 @@
 		18CF29F7256451F60063FBA6 /* SearchNetworkingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkingClass.swift; sourceTree = "<group>"; };
 		18CF29F8256451F60063FBA6 /* AppNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNetworking.swift; sourceTree = "<group>"; };
 		18CF2A12256456B60063FBA6 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
-		18CF2A182564593C0063FBA6 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		18CF2A2725647DAF0063FBA6 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		18CF2A182564593C0063FBA6 /* PostlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostlistModel.swift; sourceTree = "<group>"; };
 		18F8D8D32564085400594D4C /* Demoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8D8D62564085400594D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8D8D82564085400594D4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +137,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18958B1F2565623C0098D398 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				18CF298B25643A490063FBA6 /* Helper */,
+				18CF29F3256451E00063FBA6 /* Services */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		18958B21256562790098D398 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				18F8D8DA2564085400594D4C /* LoginViewController.swift */,
+				18958B05256557E90098D398 /* ViewController.swift */,
+				181DB0A125641A42009BB1B7 /* Homeviewcontroller.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		18A27116256569570093B125 /* customview */ = {
+			isa = PBXGroup;
+			children = (
+				18A271182565697D0093B125 /* cell */,
+				18A27117256569710093B125 /* tableview */,
+			);
+			path = customview;
+			sourceTree = "<group>";
+		};
+		18A27117256569710093B125 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				18CF29AE25643B4D0063FBA6 /* FavListvc.swift */,
+				18CF29A625643B3D0063FBA6 /* PostListvc.swift */,
+			);
+			path = tableview;
+			sourceTree = "<group>";
+		};
+		18A271182565697D0093B125 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				18CF29B3256446420063FBA6 /* Postlistcell.swift */,
+				18958B0A256558040098D398 /* Postlistcell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		18CF298B25643A490063FBA6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,15 +207,13 @@
 			path = PageMenu;
 			sourceTree = "<group>";
 		};
-		18CF29A525643B230063FBA6 /* TabBar */ = {
+		18CF29A525643B230063FBA6 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				18CF29A625643B3D0063FBA6 /* PostListvc.swift */,
-				18958B0A256558040098D398 /* Postlistcell.xib */,
-				18CF29AE25643B4D0063FBA6 /* FavListvc.swift */,
-				18CF29B3256446420063FBA6 /* Postlistcell.swift */,
+				18F8D8DC2564085400594D4C /* Main.storyboard */,
+				18A27116256569570093B125 /* customview */,
 			);
-			path = TabBar;
+			path = views;
 			sourceTree = "<group>";
 		};
 		18CF29F3256451E00063FBA6 /* Services */ = {
@@ -185,15 +227,15 @@
 				18CF29F6256451F60063FBA6 /* Webservices.swift */,
 			);
 			name = Services;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		18CF2A172564592D0063FBA6 /* Model */ = {
+		18CF2A172564592D0063FBA6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				18CF2A2725647DAF0063FBA6 /* TodoModel.swift */,
-				18CF2A182564593C0063FBA6 /* Todo.swift */,
+				18CF2A182564593C0063FBA6 /* PostlistModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		18F8D8CA2564085400594D4C = {
@@ -221,20 +263,16 @@
 		18F8D8D52564085400594D4C /* Demoapp */ = {
 			isa = PBXGroup;
 			children = (
-				18CF2A172564592D0063FBA6 /* Model */,
-				18CF29F3256451E00063FBA6 /* Services */,
-				18CF29A525643B230063FBA6 /* TabBar */,
-				18CF298B25643A490063FBA6 /* Helper */,
+				18CF2A172564592D0063FBA6 /* ViewModel */,
+				18CF29A525643B230063FBA6 /* views */,
+				18958B21256562790098D398 /* controller */,
 				18F8D8D62564085400594D4C /* AppDelegate.swift */,
-				18958B05256557E90098D398 /* ViewController.swift */,
 				18F8D8D82564085400594D4C /* SceneDelegate.swift */,
-				18F8D8DA2564085400594D4C /* LoginViewController.swift */,
-				181DB0A125641A42009BB1B7 /* Homeviewcontroller.swift */,
-				18F8D8DC2564085400594D4C /* Main.storyboard */,
 				18F8D8E22564085600594D4C /* Assets.xcassets */,
 				18F8D8E42564085600594D4C /* LaunchScreen.storyboard */,
 				18F8D8E72564085600594D4C /* Info.plist */,
 				18F8D8DF2564085400594D4C /* Demoapp.xcdatamodeld */,
+				18958B1F2565623C0098D398 /* Helper */,
 			);
 			path = Demoapp;
 			sourceTree = "<group>";
@@ -529,7 +567,6 @@
 				18CF29AF25643B4D0063FBA6 /* FavListvc.swift in Sources */,
 				18958B06256557E90098D398 /* ViewController.swift in Sources */,
 				18CF29FD256451F60063FBA6 /* AppNetworking.swift in Sources */,
-				18CF2A2825647DAF0063FBA6 /* TodoModel.swift in Sources */,
 				18CF29B4256446420063FBA6 /* Postlistcell.swift in Sources */,
 				18CF299C25643A900063FBA6 /* MenuItemView.swift in Sources */,
 				18CF29FC256451F60063FBA6 /* SearchNetworkingClass.swift in Sources */,
@@ -544,7 +581,7 @@
 				18CF299E25643A900063FBA6 /* CAPSPageMenu.swift in Sources */,
 				18CF299F25643A900063FBA6 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				18CF29FA256451F60063FBA6 /* Webservice+EndPoints.swift in Sources */,
-				18CF2A192564593C0063FBA6 /* Todo.swift in Sources */,
+				18CF2A192564593C0063FBA6 /* PostlistModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
