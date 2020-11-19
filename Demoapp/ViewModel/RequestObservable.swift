@@ -13,9 +13,7 @@ public class RequestObservable {
 //MARK: function for URLSession takes
   public func callAPI<ItemModel: Decodable>(request: URLRequest)
     -> Observable<ItemModel> {
-  //MARK: creating our observable
   return Observable.create { observer in
-  //MARK: create URLSession dataTask
   let task = self.urlSession.dataTask(with: request) { (data,
                 response, error) in
     let json  = JSON(data)
@@ -28,14 +26,12 @@ public class RequestObservable {
     if (200...399).contains(statusCode) {
       let objs = try self.jsonDecoder.decode(ItemModel.self, from:
                           _data)
-      //MARK: observer onNext event
       observer.onNext(objs)
     }
     else {
       observer.onError(error!)
     }
   } catch {
-      //MARK: observer onNext event
       observer.onError(error)
      }
    }

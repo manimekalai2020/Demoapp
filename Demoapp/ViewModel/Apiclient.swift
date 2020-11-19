@@ -1,7 +1,6 @@
 import Foundation
 import RxCocoa
 import RxSwift
-//MARK: extension for converting out RecipeModel to jsonObject
 fileprivate extension Encodable {
   var dictionaryValue:[String: Any?]? {
       guard let data = try? JSONEncoder().encode(self),

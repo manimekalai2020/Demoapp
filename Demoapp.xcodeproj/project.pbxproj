@@ -181,6 +181,15 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		18A2715B25665EAE0093B125 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18A2712E25663CB50093B125 /* PostModel.swift */,
+				18A271472566526A0093B125 /* PostlistModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		18CF298B25643A490063FBA6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,8 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				18958B00256557D30098D398 /* Wireframe.swift */,
-				18A2713325663CDC0093B125 /* RequestObservable.swift */,
-				18A2713825663D140093B125 /* Apiclient.swift */,
 			);
 			name = Services;
 			path = ..;
@@ -228,8 +235,8 @@
 		18CF2A172564592D0063FBA6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				18A271472566526A0093B125 /* PostlistModel.swift */,
-				18A2712E25663CB50093B125 /* PostModel.swift */,
+				18A2713325663CDC0093B125 /* RequestObservable.swift */,
+				18A2713825663D140093B125 /* Apiclient.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 		18F8D8D52564085400594D4C /* Demoapp */ = {
 			isa = PBXGroup;
 			children = (
+				18A2715B25665EAE0093B125 /* Model */,
 				18CF2A172564592D0063FBA6 /* ViewModel */,
 				18CF29A525643B230063FBA6 /* views */,
 				18958B21256562790098D398 /* controller */,
