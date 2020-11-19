@@ -12,27 +12,16 @@ import ObjectMapper
 class FavListvc: UIViewController {
     var Postlist:[PostlistModel] = []
 
-    var isLikeBtnSelected = false
-    var SaveArray : [Int] = []
-
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        ///let array  = stringsarray?.compactMap({ Int($0 as! String) })
-         Apicall()
-        // Do any additional setup after loading the view.
+        Apicall()
     }
-  
     @IBAction func Fvbutton_Tab(_ sender: UIButton) {
-     
-
     }
-    
     func Apicall(){
-        print(SaveArray)
             let jsonarray = UserDefaults.standard.array(forKey: "jsonData")!
             self.Postlist = Mapper<PostlistModel>().mapArray(JSONArray: jsonarray as! [[String : Any]])
-        
             self.tableview.reloadData()
     }
     
@@ -56,10 +45,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
     
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//          if let url = URL(string: self.Weburl_STRING[indexPath.row]) {
-//          UIApplication.shared.open(url)
-//}
-    
 
 }
 }

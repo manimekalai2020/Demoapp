@@ -11,6 +11,11 @@
 		18958B01256557D30098D398 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18958B00256557D30098D398 /* Wireframe.swift */; };
 		18958B06256557E90098D398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18958B05256557E90098D398 /* ViewController.swift */; };
 		18958B0B256558040098D398 /* Postlistcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18958B0A256558040098D398 /* Postlistcell.xib */; };
+		18A2712F25663CB50093B125 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2712E25663CB50093B125 /* PostModel.swift */; };
+		18A2713425663CDC0093B125 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2713325663CDC0093B125 /* RequestObservable.swift */; };
+		18A2713925663D140093B125 /* Apiclient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2713825663D140093B125 /* Apiclient.swift */; };
+		18A2713E25663D520093B125 /* DisplayPostcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2713D25663D520093B125 /* DisplayPostcontroller.swift */; };
+		18A271482566526A0093B125 /* PostlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A271472566526A0093B125 /* PostlistModel.swift */; };
 		18CF299B25643A900063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF299425643A8F0063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
 		18CF299C25643A900063FBA6 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF299525643A900063FBA6 /* MenuItemView.swift */; };
 		18CF299D25643A900063FBA6 /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF299625643A900063FBA6 /* CAPSPageMenu+Options.swift */; };
@@ -22,13 +27,7 @@
 		18CF29AF25643B4D0063FBA6 /* FavListvc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29AE25643B4D0063FBA6 /* FavListvc.swift */; };
 		18CF29B4256446420063FBA6 /* Postlistcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29B3256446420063FBA6 /* Postlistcell.swift */; };
 		18CF29B9256447C90063FBA6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29B8256447C90063FBA6 /* Theme.swift */; };
-		18CF29F9256451F60063FBA6 /* JsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F4256451F50063FBA6 /* JsonHandler.swift */; };
-		18CF29FA256451F60063FBA6 /* Webservice+EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F5256451F50063FBA6 /* Webservice+EndPoints.swift */; };
-		18CF29FB256451F60063FBA6 /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F6256451F60063FBA6 /* Webservices.swift */; };
-		18CF29FC256451F60063FBA6 /* SearchNetworkingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F7256451F60063FBA6 /* SearchNetworkingClass.swift */; };
-		18CF29FD256451F60063FBA6 /* AppNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF29F8256451F60063FBA6 /* AppNetworking.swift */; };
 		18CF2A13256456B60063FBA6 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF2A12256456B60063FBA6 /* ApiKeys.swift */; };
-		18CF2A192564593C0063FBA6 /* PostlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF2A182564593C0063FBA6 /* PostlistModel.swift */; };
 		18F8D8D72564085400594D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D8D62564085400594D4C /* AppDelegate.swift */; };
 		18F8D8D92564085400594D4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D8D82564085400594D4C /* SceneDelegate.swift */; };
 		18F8D8DB2564085400594D4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D8DA2564085400594D4C /* LoginViewController.swift */; };
@@ -66,6 +65,11 @@
 		18958B00256557D30098D398 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		18958B05256557E90098D398 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18958B0A256558040098D398 /* Postlistcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Postlistcell.xib; sourceTree = "<group>"; };
+		18A2712E25663CB50093B125 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		18A2713325663CDC0093B125 /* RequestObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObservable.swift; sourceTree = "<group>"; };
+		18A2713825663D140093B125 /* Apiclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiclient.swift; sourceTree = "<group>"; };
+		18A2713D25663D520093B125 /* DisplayPostcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPostcontroller.swift; sourceTree = "<group>"; };
+		18A271472566526A0093B125 /* PostlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostlistModel.swift; sourceTree = "<group>"; };
 		18CF299425643A8F0063FBA6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
 		18CF299525643A900063FBA6 /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		18CF299625643A900063FBA6 /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
@@ -77,13 +81,7 @@
 		18CF29AE25643B4D0063FBA6 /* FavListvc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavListvc.swift; sourceTree = "<group>"; };
 		18CF29B3256446420063FBA6 /* Postlistcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postlistcell.swift; sourceTree = "<group>"; };
 		18CF29B8256447C90063FBA6 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		18CF29F4256451F50063FBA6 /* JsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHandler.swift; sourceTree = "<group>"; };
-		18CF29F5256451F50063FBA6 /* Webservice+EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Webservice+EndPoints.swift"; sourceTree = "<group>"; };
-		18CF29F6256451F60063FBA6 /* Webservices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
-		18CF29F7256451F60063FBA6 /* SearchNetworkingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkingClass.swift; sourceTree = "<group>"; };
-		18CF29F8256451F60063FBA6 /* AppNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNetworking.swift; sourceTree = "<group>"; };
 		18CF2A12256456B60063FBA6 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
-		18CF2A182564593C0063FBA6 /* PostlistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostlistModel.swift; sourceTree = "<group>"; };
 		18F8D8D32564085400594D4C /* Demoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8D8D62564085400594D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8D8D82564085400594D4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				18F8D8DA2564085400594D4C /* LoginViewController.swift */,
-				18958B05256557E90098D398 /* ViewController.swift */,
 				181DB0A125641A42009BB1B7 /* Homeviewcontroller.swift */,
+				18958B05256557E90098D398 /* ViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -219,12 +217,9 @@
 		18CF29F3256451E00063FBA6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				18CF29F8256451F60063FBA6 /* AppNetworking.swift */,
-				18CF29F4256451F50063FBA6 /* JsonHandler.swift */,
-				18CF29F7256451F60063FBA6 /* SearchNetworkingClass.swift */,
 				18958B00256557D30098D398 /* Wireframe.swift */,
-				18CF29F5256451F50063FBA6 /* Webservice+EndPoints.swift */,
-				18CF29F6256451F60063FBA6 /* Webservices.swift */,
+				18A2713325663CDC0093B125 /* RequestObservable.swift */,
+				18A2713825663D140093B125 /* Apiclient.swift */,
 			);
 			name = Services;
 			path = ..;
@@ -233,7 +228,8 @@
 		18CF2A172564592D0063FBA6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				18CF2A182564593C0063FBA6 /* PostlistModel.swift */,
+				18A271472566526A0093B125 /* PostlistModel.swift */,
+				18A2712E25663CB50093B125 /* PostModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -273,6 +269,7 @@
 				18F8D8E72564085600594D4C /* Info.plist */,
 				18F8D8DF2564085400594D4C /* Demoapp.xcdatamodeld */,
 				18958B1F2565623C0098D398 /* Helper */,
+				18A2713D25663D520093B125 /* DisplayPostcontroller.swift */,
 			);
 			path = Demoapp;
 			sourceTree = "<group>";
@@ -557,22 +554,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18CF29FB256451F60063FBA6 /* Webservices.swift in Sources */,
 				18F8D8DB2564085400594D4C /* LoginViewController.swift in Sources */,
 				18CF29A125643A900063FBA6 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
+				18A2713425663CDC0093B125 /* RequestObservable.swift in Sources */,
 				18F8D8D72564085400594D4C /* AppDelegate.swift in Sources */,
 				18CF29A725643B3D0063FBA6 /* PostListvc.swift in Sources */,
+				18A2712F25663CB50093B125 /* PostModel.swift in Sources */,
+				18A2713925663D140093B125 /* Apiclient.swift in Sources */,
 				181DB0A225641A42009BB1B7 /* Homeviewcontroller.swift in Sources */,
 				18F8D8E12564085400594D4C /* Demoapp.xcdatamodeld in Sources */,
 				18CF29AF25643B4D0063FBA6 /* FavListvc.swift in Sources */,
 				18958B06256557E90098D398 /* ViewController.swift in Sources */,
-				18CF29FD256451F60063FBA6 /* AppNetworking.swift in Sources */,
+				18A271482566526A0093B125 /* PostlistModel.swift in Sources */,
 				18CF29B4256446420063FBA6 /* Postlistcell.swift in Sources */,
 				18CF299C25643A900063FBA6 /* MenuItemView.swift in Sources */,
-				18CF29FC256451F60063FBA6 /* SearchNetworkingClass.swift in Sources */,
 				18CF2A13256456B60063FBA6 /* ApiKeys.swift in Sources */,
 				18CF29B9256447C90063FBA6 /* Theme.swift in Sources */,
-				18CF29F9256451F60063FBA6 /* JsonHandler.swift in Sources */,
+				18A2713E25663D520093B125 /* DisplayPostcontroller.swift in Sources */,
 				18CF29A025643A900063FBA6 /* CAPSPageMenuConfiguration.swift in Sources */,
 				18CF299D25643A900063FBA6 /* CAPSPageMenu+Options.swift in Sources */,
 				18F8D8D92564085400594D4C /* SceneDelegate.swift in Sources */,
@@ -580,8 +578,6 @@
 				18958B01256557D30098D398 /* Wireframe.swift in Sources */,
 				18CF299E25643A900063FBA6 /* CAPSPageMenu.swift in Sources */,
 				18CF299F25643A900063FBA6 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
-				18CF29FA256451F60063FBA6 /* Webservice+EndPoints.swift in Sources */,
-				18CF2A192564593C0063FBA6 /* PostlistModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

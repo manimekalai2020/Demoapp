@@ -10,19 +10,14 @@ import Alamofire
 import ObjectMapper
 import RxSwift
 import RxCocoa
-
+import SwiftyJSON
 struct Manager {
 
 static var results = [Int]()
 
 }
-class PostListvc: ViewController, UITableViewDelegate {
-    var Postlist:[PostlistModel] = []
-    var isLikeBtnSelected = false
-    var SaveArray : [Int] = []
-    var postListData = [PostlistModel]()
-    var postListDataModel: PostlistModel?
-    var HostURL = "https://jsonplaceholder.typicode.com/posts"
+class PostListvc: ViewController,UITableViewDelegate {
+    var posts: [PostModel] = []
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -31,19 +26,44 @@ class PostListvc: ViewController, UITableViewDelegate {
         }
         super.viewDidLoad()
         self.tableview.register(UINib(nibName: "Postlistcell", bundle: nil), forCellReuseIdentifier: "Postlistcell")
-         Apicall()
+       
+        apicallfun()
+    }
+    func apicallfun(){
+
+        let client = APIClient.shared
+         do{
+           try client.getRecipes().subscribe(
+            onNext: { [self] result in
+              
+                self.posts = result
+                //MARK: display in UITableView
+                DispatchQueue.main.async {
+                    obdservertable()
+                    
+                }
+                
+             },
+             onError: { error in
+                print(error.localizedDescription)
+             },
+             onCompleted: {
+             }).disposed(by: disposeBag)
+
+           }
+           catch{
+         }
     }
     func obdservertable(){
-        let items = Observable.just(Postlist)
+        let items = Observable.just(posts)
+        print(self.posts)
         items
             .bind(to: tableview.rx.items(cellIdentifier: "Postlistcell", cellType: Postlistcell.self)) { (row, element, cell) in
-                cell.Title_label.text = element.title
-                cell.Description_label.text = element.body
+                cell.Title_label.text = element.getTitle()
+                cell.Description_label.text = element.getBody()
                 cell.Favbutton.tag = row
                 if Manager.results.contains(row) {
                     cell.Favbutton.setImage(#imageLiteral(resourceName: "star_color"), for: .normal)
-
-                  //do something
                 }else{
                     cell.Favbutton.setImage(#imageLiteral(resourceName: "star_icon"), for: .normal)
                 }
@@ -51,26 +71,4 @@ class PostListvc: ViewController, UITableViewDelegate {
             .disposed(by: disposeBag)
 
     }
-  
- 
-    func Apicall(){
-        
-        if Reachability.isConnectedToNetwork(){
-            JsonHandler.StartRequest(HostURL, method: .get, params: nil , ShowIt: false, setview: self.view, success: { [self] (Responce) in
-            let jsonarray = Responce.arrayObject as NSArray?
-            UserDefaults.standard.set(jsonarray, forKey: "jsonData")
-            self.Postlist = Mapper<PostlistModel>().mapArray(JSONArray: jsonarray as! [[String : Any]])
-                self.obdservertable()
-          },EmptyData: { (Responce) in
-           
-          }) { (Error) in
-          }
-        }else{
-            let jsonarray = UserDefaults.standard.array(forKey: "jsonData")!
-            self.Postlist = Mapper<PostlistModel>().mapArray(JSONArray: jsonarray as! [[String : Any]])
-            self.obdservertable()
-        }
-    }
-    
-
 }
